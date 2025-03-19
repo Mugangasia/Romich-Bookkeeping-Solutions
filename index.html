@@ -187,5 +187,54 @@
             </div>
         </div>
     </footer>
+
+    <!-- Add this code just before the closing </body> tag -->
+<div id="consultationModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="consultation-form">
+        <h3>Schedule Your Free Consultation</h3>
+        <form id="consultationForm">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+          </div>
+          <div class="form-group">
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select Service</option>
+              <option value="general-bookkeeping">General Bookkeeping</option>
+              <option value="financial-reporting">Financial Reporting</option>
+              <option value="tax-preparation">Tax Preparation</option>
+              <option value="financial-consultancy">Financial Consultancy</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="date" id="preferred-date" name="preferred-date" required>
+          </div>
+          <div class="form-group">
+            <select id="preferred-time" name="preferred-time" required>
+              <option value="" disabled selected>Preferred Time</option>
+              <option value="morning">Morning (9am - 12pm)</option>
+              <option value="afternoon">Afternoon (1pm - 5pm)</option>
+              <option value="evening">Evening (After 5pm)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Tell us about your business needs" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-submit">Schedule Consultation</button>
+        </form>
+        <div id="form-message" class="form-message"></div>
+      </div>
+    </div>
+  </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
