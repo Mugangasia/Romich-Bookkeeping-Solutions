@@ -153,3 +153,19 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+
+// Floating Contact functionality
+const contactTrigger = document.getElementById('contactTrigger');
+const contactOptions = document.getElementById('contactOptions');
+
+contactTrigger.addEventListener('click', function() {
+    contactOptions.classList.toggle('active');
+});
+
+// Close contact options when clicking outside
+document.addEventListener('click', function(event) {
+    if (!contactTrigger.contains(event.target) && !contactOptions.contains(event.target)) {
+        contactOptions.classList.remove('active');
+    }
+});
