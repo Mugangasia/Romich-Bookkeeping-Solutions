@@ -20,15 +20,61 @@
                     <p>WHERE EVERY NUMBER TELLS A STORY</p>
                 </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="mobile-nav-toggle">☰</button>
+            <div class="header-right">
+                <button class="mobile-nav-toggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#services" class="dropbtn">Services</a>
+                            <div class="dropdown-content">
+                                <a href="#services">General Bookkeeping</a>
+                                <a href="#services">Financial Reporting</a>
+                                <a href="#services">Tax Preparation</a>
+                                <a href="#services">Financial Consultancy</a>
+                            </div>
+                        </li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <a href="#contact" class="consultation-btn">
+                    <i>📅</i>
+                    <span>Consultation</span>
+                </a>
+                <div class="language-selector">
+                    <div class="current-language">
+                        <img src="images/icons8-great-britain-48.png" class="language-flag" alt="US Flag">
+                        <span>EN</span>
+                    </div>
+                    <div class="language-dropdown">
+                        <a href="?lang=en-us" class="language-option">
+                            <img src="images/icons8-usa-48 (1).png" class="language-flag" alt="US Flag">
+                            <span>English (US)</span>
+                        </a>
+                        <a href="?lang=en-gb" class="language-option">
+                            <img src="images/icons8-great-britain-48.png" class="language-flag" alt="UK Flag">
+                            <span>English (UK)</span>
+                        </a>
+                        <a href="?lang=fr" class="language-option">
+                            <img src="images/icons8-france-48.png" class="language-flag" alt="French Flag">
+                            <span>Français</span>
+                        </a>
+                        <a href="?lang=es" class="language-option">
+                            <img src="images/icons8-france-48.png" class="language-flag" alt="Spanish Flag">
+                            <span>Español</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -84,7 +130,7 @@
                     <a href="#contact" class="btn btn-secondary">Learn More About Us</a>
                 </div>
                 <div class="about-image">
-                    <img src="/api/placeholder/500/350" alt="Romich Bookkeeping Team">
+                    <img src="images/About Us.png" alt="Romich Bookkeeping Team">
                 </div>
             </div>
         </div>
@@ -234,7 +280,43 @@
     </div>
   </div>
 
+  <!-- Floating Contact Button -->
+<div class="floating-contact">
+    <div class="contact-trigger" id="contactTrigger">
+        <img src="images/icons8-whatsapp.gif" alt="Professional Photo">
+    </div>
+    <div class="contact-options" id="contactOptions">
+        <a href="https://wa.me/1234567890" class="contact-option whatsapp-option">
+            <i>📱</i>
+            <span>WhatsApp Us</span>
+        </a>
+        <a href="mailto:info@romichbookkeeping.com" class="contact-option email-option">
+            <i>✉️</i>
+            <span>Email Us</span>
+        </a>
+    </div>
+</div>
+
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+
+    <script>
+        // Floating Contact functionality
+        const contactTrigger = document.getElementById('contactTrigger');
+        const contactOptions = document.getElementById('contactOptions');
+        
+        contactTrigger.addEventListener('click', function() {
+            contactOptions.classList.toggle('active');
+        });
+        
+        // Close contact options when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!contactTrigger.contains(event.target) && !contactOptions.contains(event.target)) {
+                contactOptions.classList.remove('active');
+            }
+        });
+    </script>
+
+
 </body>
 </html>
